@@ -26,7 +26,7 @@ variable "AWS_ACCESS_KEY" {}
 
 data "null_data_source" "test" {
   inputs = {
-    ak = "${var.AWSK_ACCESS_KEY}"
+    ak = "${var.AWS_ACCESS_KEY}"
   }
 }
 
