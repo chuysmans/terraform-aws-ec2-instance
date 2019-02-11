@@ -24,13 +24,13 @@ resource "aws_instance" "ubuntu" {
 variable "AWS_ACCESS_KEY_ID" {
   default = "foo"
 }
-variable "AWS_SECRET_ACCESS_KEY" {}
-variable "CONFIRM_DESTROY" {}
+variable "AWS_SECRET_ACCESS_KEY" {
+  default = "bar"
+}
 
 data "null_data_source" "test" {
   inputs = {
     ak = "${var.AWS_ACCESS_KEY_ID}"
-    cd = "${var.CONFIRM_DESTROY}"
     sak = "${var.AWS_SECRET_ACCESS_KEY}"
     name = "${var.name}"
   }
