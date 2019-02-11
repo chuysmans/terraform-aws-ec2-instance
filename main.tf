@@ -24,8 +24,6 @@ resource "aws_instance" "ubuntu" {
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_ACCESS_KEY" {}
 variable "CONFIRM_DESTROY" {}
-variable "name" {}
-
 
 data "null_data_source" "test" {
   inputs = {
