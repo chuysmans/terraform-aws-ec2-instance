@@ -21,7 +21,9 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-variable "AWS_ACCESS_KEY_ID" {}
+variable "AWS_ACCESS_KEY_ID" {
+  default = "foo"
+}
 variable "AWS_SECRET_ACCESS_KEY" {}
 variable "CONFIRM_DESTROY" {}
 
