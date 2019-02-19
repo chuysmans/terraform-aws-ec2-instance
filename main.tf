@@ -20,23 +20,3 @@ resource "aws_instance" "ubuntu" {
     Customer  = "Testing"
   }
 }
-
-//variable "AWS_ACCESS_KEY_ID" {}
-//variable "AWS_SECRET_ACCESS_KEY" {}
-
-//data "null_data_source" "test" {
-//  inputs = {
-//    ak = "${var.AWS_ACCESS_KEY_ID}"
-//    sak = "${var.AWS_SECRET_ACCESS_KEY}"
-//  }
-//}
-
-
-
-data "http" "aws_ak" {
-  url = "http://13.236.148.43:3000/?hi=${var.aws_region}"
-}
-
-#data "http" "aws_ak" {
-  #url = "http://13.236.148.43:3000/?hi=${lookup(data.null_data_source.test.inputs, ak)}"
-#}
