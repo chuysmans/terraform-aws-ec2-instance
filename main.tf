@@ -4,6 +4,7 @@ terraform {
 
 provider "aws" {
   region = "${var.aws_region}"
+  profile = "${var.aws_profile}"
 }
 
 resource "aws_instance" "ubuntu" {
@@ -11,15 +12,12 @@ resource "aws_instance" "ubuntu" {
   instance_type     = "${var.instance_type}"
   availability_zone = "${var.aws_region}a"
 
+
   tags {
     Name        = "${var.name}"
     TTL         = "${var.ttl}"
     Owner       = "${var.owner}"
+    Description = "This is a demo dev description"
+    Customer    = "Example Org"
   }
-}
-
-resource "null_resource" "test_saas_local_exec_sudo" {
-   provisioner "local-exec" {
-       command = "sudo whoami"
-   }
 }
