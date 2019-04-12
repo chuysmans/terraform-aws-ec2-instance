@@ -1,10 +1,16 @@
 terraform {
   required_version = ">= 0.11.0"
+  backend "remote" {
+    organization = "camhuysmans"
+    workspaces {
+      name = "aws-ec2-instance-dev"
+    }
+  }
 }
 
 provider "aws" {
   region = "${var.aws_region}"
-  profile = "${var.aws_profile}"
+  #profile = "${var.aws_profile}"
 }
 
 resource "aws_instance" "ubuntu" {
