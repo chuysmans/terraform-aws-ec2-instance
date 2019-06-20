@@ -18,6 +18,15 @@ resource "aws_instance" "ubuntu" {
     TTL         = "${var.ttl}"
     Owner       = "${var.owner}"
     Description = "This is a demo qa description"
-    Customer  = "Demo to HashiCorp Terraform" 
   }
+}
+
+
+module "ec2-instance" {
+  source  = "app.terraform.io/camhuysmans/ec2-instance/aws"
+  version = "1.0.0"
+}
+
+module "ec2-instance" {
+  source  = "../../../ec2-instance/aws"
 }
