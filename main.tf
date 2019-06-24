@@ -20,9 +20,3 @@ resource "aws_instance" "ubuntu" {
     Description = "This is a demo qa description"
   }
 }
-
-
-module "ec2-instance" {
-  source  = "app.terraform.io/camhuysmans/ec2-instance/aws"
-  version = "1.0.0"
-}
