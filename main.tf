@@ -26,7 +26,3 @@ module "ec2-instance" {
   source  = "app.terraform.io/camhuysmans/ec2-instance/aws"
   version = "1.0.0"
 }
-
-module "ec2-instance" {
-  source  = "../../../ec2-instance/aws"
-}
