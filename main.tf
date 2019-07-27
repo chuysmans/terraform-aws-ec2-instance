@@ -23,17 +23,7 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-resource "aws_instance" "ubuntu2" {
-  ami               = "${var.ami_id}"
-  instance_type     = "${var.instance_type}"
-  availability_zone = "${var.aws_region}a"
-
-
-  tags {
-    Name        = "${var.name}"
-    TTL         = "${var.ttl}"
-    Owner       = "${var.owner}"
-    Description = "This is a demo qa description"
-    Customer    = "HashiCorp"
-  }
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "2.9.0"
 }
