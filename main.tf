@@ -25,5 +25,5 @@ resource "aws_instance" "ubuntu" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.9.0"
+  version = "2.8.0"
 }
