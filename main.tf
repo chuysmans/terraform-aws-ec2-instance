@@ -19,11 +19,5 @@ resource "aws_instance" "ubuntu" {
     Owner       = "${var.owner}"
     Description = "This is a demo qa description"
     Customer    = "HashiCorp"
-    HUG         = "India"
   }
-}
-
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "2.8.0"
 }
