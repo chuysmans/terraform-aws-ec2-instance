@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "AWS region"
-  default = "us-east-1"
+  default = "ap-southeast-2"
 }
 
 variable "aws_profile" {
@@ -23,14 +23,14 @@ variable "name" {
   default = "Provisioned by Terraform"
 }
 
-variable "owner" {
+variable "Owner" {
   description = "Name to pass to the Owner tag"
-  default = "Pizza-Pizza"
+  default = "Cameron Huysmans"
 }
 
-variable "ttl" {
+variable "TTL" {
   description = "Hours until instances are reaped by N.E.P.T.R"
-  default = "3"
+  default = "8"
 }
 
 variable "description" {
