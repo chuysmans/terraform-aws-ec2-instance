@@ -16,6 +16,6 @@ resource "aws_instance" "ubuntu" {
     TTL         = var.TTL
     Owner       = var.Owner
     Description = "This is a demo qa description"
-    Customer  = "Coles"
+    Customer  = "HashiCorp"
   }
 }
