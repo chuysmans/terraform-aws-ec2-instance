@@ -1,4 +1,4 @@
-# Provision an EC2 instance in AWS
+# Provision an EC2 instance in AWS (QA Branch)
 This Terraform configuration provisions an EC2 instance in AWS.
 
 This is largely used for Demonstrating Terraform Enterprise workspaces
