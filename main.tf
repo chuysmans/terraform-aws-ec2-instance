@@ -17,5 +17,6 @@ resource "aws_instance" "ubuntu" {
     Owner       = var.Owner
     Description = "This is a demo qa description"
     Customer  = "HashiCorp"
+    Worksapce = "prod"
   }
 }
