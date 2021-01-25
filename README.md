@@ -23,3 +23,4 @@ export AWS_ACCESS_KEY_ID=MONEROMONEROMONERO
 export AWS_SECRET_ACCESS_KEY=don'tyouwishthiswasmakingyoumonero
 EOF
 ```
+..
