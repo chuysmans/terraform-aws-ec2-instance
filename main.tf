@@ -18,7 +18,7 @@ resource "aws_instance" "ubuntu" {
   availability_zone = "${var.aws_region}a"
 
 
-  tags {
+  tags = {
     Name        = var.name
     TTL         = var.ttl
     Owner       = var.owner
