@@ -24,6 +24,7 @@ resource "aws_instance" "ubuntu" {
     Owner       = var.owner
     Description = "This is a demo qa description"
     Customer    = "HashiCorp-Demo-aws"
+    NewTag      = "Updated For Jon"
   }
 }
 
