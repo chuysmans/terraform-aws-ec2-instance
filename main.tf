@@ -27,3 +27,6 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
+output "instance_ip_address" {
+  value = aws_instance.ubuntu.private_ip
+}
