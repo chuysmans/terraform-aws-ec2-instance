@@ -21,7 +21,7 @@ provider "aws" {
   }
 }
 
-resource "aws_instance" "Webserver" {
+resource "aws_instance" "webserver" {
   ami               = var.ami_id
   instance_type     = var.instance_type
   availability_zone = "${var.aws_region}a"
