@@ -16,6 +16,7 @@ resource "aws_instance" "ubuntu" {
   ami               = var.ami_id
   instance_type     = var.instance_type
   availability_zone = "${var.aws_region}a"
+  availability_zone = module.vpc.public_subnets[0]
 
 
   tags = {
@@ -31,8 +32,8 @@ output "instance_ip_address" {
   value = aws_instance.ubuntu.private_ip
 }
 
-module "vpvc" {
-  source  = "app.terraform.io/camhuysmans/vpvc/aws"
+module "vpc" {
+  source  = "app.terraform.io/camhuysmans/vpc/aws"
   version = "3.0.0"
   name = "my-vpc"
   cidr = "10.0.0.0/16"
@@ -54,5 +55,5 @@ module "vpvc" {
   }
 }
 output "vpc_id" {
-  value = module.vpvc.vpc_id
+  value = module.vpc.vpc_id
 }
