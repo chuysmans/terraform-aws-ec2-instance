@@ -26,8 +26,6 @@ resource "aws_instance" "webserver" {
   instance_type     = var.instance_type
   availability_zone = "${var.aws_region}a"
   subnet_id = module.vpc.public_subnets[0]
-
-
   tags = {
     Customer    = "HashiCorp-Demo"
     Owner       = var.owner
@@ -36,11 +34,11 @@ resource "aws_instance" "webserver" {
   }
 }
 
-output "instance_ip_address" {
+output "webserver_ip_address" {
   value = aws_instance.webserver.private_ip
 }
 
-output "instance_public_ip_address" {
+output "webserver_public_ip_address" {
   value = aws_instance.webserver.public_ip
 }
 
