@@ -10,6 +10,15 @@ terraform {
 provider "aws" {
   region = var.aws_region
   profile = var.aws_profile
+  default_tags {
+    tags = {
+      Environment = "QA"
+      Description = "This is a demo qa description"
+      Owner       = var.owner
+      Name        = var.name
+      TTL         = var.ttl
+    }
+  }
 }
 
 resource "aws_instance" "ubuntu" {
@@ -20,16 +29,16 @@ resource "aws_instance" "ubuntu" {
 
 
   tags = {
-    Name        = var.name
-    TTL         = var.ttl
-    Owner       = var.owner
-    Description = "This is a demo qa description"
-    Customer    = "HashiCorp-Demo-ASIC"
+    Customer    = "HashiCorp-Demo"
   }
 }
 
 output "instance_ip_address" {
   value = aws_instance.ubuntu.private_ip
+}
+
+output "instance_public_ip_address" {
+  value = aws_instance.ubuntu.public_ip
 }
 
 module "vpc" {
@@ -46,11 +55,7 @@ module "vpc" {
   enable_vpn_gateway = true
 
   tags = {
-    Name        = var.name
-    TTL         = var.ttl
-    Owner       = var.owner
-    Description = "This is a demo qa description"
-    Customer    = "HashiCorp-Demo-aws"
+    Customer    = "HashiCorp-Demo"
     Environment = "qa"
   }
 }
