@@ -1,9 +1,15 @@
-# Provision an EC2 instance in AWS (QA Branch)
-This Terraform configuration provisions an EC2 instance in AWS.
+# Provision resources in AWS (QA Branch)
+This Terraform configuration will provision a VPC and EC2 instance into an aws account
 
-This is largely used for Demonstrating Terraform Enterprise workspaces
 
 ## Details
-By default, this configuration provisions a Ubuntu 14.04 Base Image AMI (with ID ami-2e1ef954) with type t2.micro in the us-east-1 region. The AMI ID, region, and type can all be set as variables. You can also set the name variable to determine the value set for the Name tag.
+This will create a new VPC with 3 public and 3 private subnets: 
 
-Note that you need to set environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+```
+azs             = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
+private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+```
+
+Following that, a webserver is created and placed into the first public subnet. 
+

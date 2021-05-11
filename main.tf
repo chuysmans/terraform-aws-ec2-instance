@@ -21,7 +21,7 @@ provider "aws" {
   }
 }
 
-resource "aws_instance" "ubuntu" {
+resource "aws_instance" "Webserver" {
   ami               = var.ami_id
   instance_type     = var.instance_type
   availability_zone = "${var.aws_region}a"
@@ -37,11 +37,11 @@ resource "aws_instance" "ubuntu" {
 }
 
 output "instance_ip_address" {
-  value = aws_instance.ubuntu.private_ip
+  value = aws_instance.webserver.private_ip
 }
 
 output "instance_public_ip_address" {
-  value = aws_instance.ubuntu.public_ip
+  value = aws_instance.webserver.public_ip
 }
 
 module "vpc" {
