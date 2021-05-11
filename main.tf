@@ -30,6 +30,9 @@ resource "aws_instance" "ubuntu" {
 
   tags = {
     Customer    = "HashiCorp-Demo"
+    Owner       = var.owner
+    Name        = var.name
+    TTL         = var.ttl
   }
 }
 
