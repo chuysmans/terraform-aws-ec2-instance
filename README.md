@@ -1,4 +1,4 @@
-# Provision resources in AWS (QA Branch)
+# Provision resources in AWS
 This Terraform configuration will provision a VPC and EC2 instance into an aws account
 
 
