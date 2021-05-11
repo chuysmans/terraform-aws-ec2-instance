@@ -16,7 +16,7 @@ resource "aws_instance" "ubuntu" {
   ami               = var.ami_id
   instance_type     = var.instance_type
   availability_zone = "${var.aws_region}a"
-  availability_zone = module.vpc.public_subnets[0]
+  subnet_id = module.vpc.public_subnets[0]
 
 
   tags = {
